@@ -76,10 +76,9 @@ DEG_extract_filtered_run = function(expr_file, group_file, exclude_list){
     
     DGETable = exactTest(DGE)
     go = goana(DGETable)
-    print(topGO(go, ont="BP", sort="Up", n=30))
-    print(topGO(go, ont="BP", sort="Down", n=30))
-    DGETable = DGETable$table
-    DGETable$FDR = p.adjust(DGETable$PValue, method =  "fdr")
-    DGETable = anno_DEG(DGETable)
-    return(DGETable)
+    top_up_10 = topGO(go, ont="BP", sort="Up", n=10)
+    top_down_10 = topGO(go, ont="BP", sort="Down", n=10)
+    print(top_up_10)
+    print(top_down_10)
+    return(go)
 }

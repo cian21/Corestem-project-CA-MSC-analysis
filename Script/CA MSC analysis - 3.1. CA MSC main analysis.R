@@ -11,3 +11,4 @@ expr_DEG_filtered = subset(expr_DEG_filtered, FDR < 0.1)
 
 #just for GO analysis, the dispersion was changed by exclusion of genes 
 expr_DEG_filtered_goana = DEG_extract_filtered_run(expr_file, group_file, diff_nums) 
+expr_DEG_nonfiltered_goana = DEG_extract_filtered_run(expr_file, group_file, c()) 
